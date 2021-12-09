@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="pt-br">
+<head>
+  <!-- Required Meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+
+  <!-- Main CSS -->
+  <link rel="stylesheet" href="./css/style.css">
+
+  <!-- Page Title -->
+  <title>Shopping Cart</title>
+</head>
+<body>
+  
+  <header>
+    <section class="search">
+      <button class="btn-search"><i class="fas fa-search"></i></button>
+      <input type="text" id="search" placeholder="Buscar produtos, marcas e muito mais...">
+    </section>
+    <button class="btn-basket"><i class="fas fa-shopping-basket"></i></button>
+  </header> <!-- fim header -->
+  
+  <main>
+    <div class="container">
+      <section class="menu-basket">
+        <ol class="basket"></ol>
+        <span class="total-price">R$ 9.669,00</span>
+      </section>
+      <section class="items"></section>
+    </div> <!-- fim container -->
+  </main> <!-- fim main -->
+
+  <script src="https://kit.fontawesome.com/018b0c6076.js" crossorigin="anonymous"></script>
+  <script src="./js/fetchProducts.js"></script>
+  <script src="./js/fetchItem.js"></script>
+  <script src="./js/saveItems.js"></script>
+  <script src="./js/getItems.js"></script>
+  <script src="./js/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,276 @@
+@import url('https://fonts.googleapis.com/css2?family=Mukta:wght@200;300;400;500;600;700;800&display=swap');
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: 'Mukta', sans-serif;
+}
+
+body {
+  background-color: #ebebeb;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  background-color: #121212;
+  padding: 20px;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 2;
+}
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.search {
+  background-color: white;
+  display: flex;
+  max-width: 600px;
+  width: 100%;
+  border-radius: 4px;
+  align-items: center;
+  overflow: hidden;
+}
+
+.search input {
+  width: 100%;
+  height: 40px;
+  font-size: 16px;
+  padding: 10px;
+  background-color: white;
+  border: none;
+  outline: none;
+}
+
+.btn-search {
+  background-color: #ebebeb;
+  width: 50px;
+  height: 40px;
+  font-size: 15px;
+  border: none;
+  outline: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.btn-search:active {
+  background-color: #ddd;
+}
+
+.btn-basket {
+  width: 40px;
+  height: 40px;
+  font-size: 25px;
+  color: white;
+  background: none;
+  border: none;
+  cursor: pointer;
+  position: relative;
+  margin-left: 40px;
+}
+
+.added::after {
+  content: 'Item adicionado!';
+  background-color: white;
+  color: #121212;
+  font-size: 15px;
+  display: block;
+  font-weight: 600;
+  width: 100px;
+  position: absolute;
+  right: 0;
+  line-height: 1.2;
+  padding: 5px;
+  border-radius: 5px;
+  transition: opacity 1000ms ease;
+}
+
+.notification::before {
+  content: '';
+  width: 11px;
+  height: 11px;
+  background-color: red;
+  display: block;
+  border-radius: 10px;
+  position: absolute;
+  opacity: 1;
+}
+
+main {
+  padding: 30px;
+  margin-top: 180px;
+}
+
+.items {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.item {
+  width: 100%;
+  max-width: 280px;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  cursor: pointer;
+  margin-bottom: 40px;
+  position: relative;
+}
+
+.item-image {
+  width: 100%;
+}
+
+.item-id {
+  display: none;
+}
+
+.item-content {
+  padding: 20px;
+  border-top: 1px solid #ddd;
+}
+
+.item-price {
+  font-size: 30px;
+  font-weight: 300;
+  display: block;
+  margin-bottom: 5px;
+}
+
+.item-title {
+  font-size: 15px;
+  color: rgba(0, 0, 0, 0.5);
+  line-height: 1.5;
+  display: block;
+}
+
+.btn-AddBasket {
+  position: absolute;
+  right: 0;
+  margin: 20px;
+  width: 50px;
+  height: 50px;
+  border-radius: 100px;
+  font-size: 20px;
+  border: none;
+  background-color: rgba(255, 255, 255, 0.8);
+  color: rgb(12, 93, 214);
+  cursor: pointer;
+  display: none;
+}
+
+.btn-AddBasket:hover {
+  color: rgb(11, 76, 173);
+}
+
+.item:hover {
+  box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.1);
+}
+
+.item:hover .btn-AddBasket {
+  display: block;
+}
+
+.menu-basket {
+  background-color: white;
+  max-width: 350px;
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  right: 0;
+  top: 0;
+  z-index: 1;
+  box-shadow: -5px 0px 10px 0px rgba(0, 0, 0, 0.1);
+  padding: 110px 30px 30px 30px;
+  margin-right: -400px;
+  transition: margin-right 400ms ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.basket {
+  list-style: none;
+  overflow-y: auto;
+}
+
+.basket-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-bottom: 1px solid #ddd;
+  padding: 20px 0;
+  position: relative;
+}
+
+.basket-item img {
+  width: 80px;
+  height: 80px;
+}
+
+.basket-item-content {
+  flex: 1;
+  padding-left: 10px;
+  padding-right: 40px;
+}
+
+.basket-item-title {
+  font-size: 14px;
+  color: rgba(0, 0, 0, 0.5);
+  display: block;
+}
+
+.basket-item-price {
+  font-size: 25px;
+  font-weight: 300;
+}
+
+.btn-remove-item {
+  position: absolute;
+  height: 40px;
+  width: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 100px;
+  font-size: 16px;
+  font-weight: 700;
+  right: 0;
+  top: 0;
+  margin: 12px 0 0 0;
+  cursor: pointer;
+}
+
+.btn-remove-item:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+.loading {
+  width: 70px;
+  display: block;
+  margin: 0 auto;
+}
+
+.total-price {
+  font-size: 30px;
+  font-weight: 400;
+  padding: 35px 0 0 0;
+  border-top: 1px solid #ddd;
+}
+
+@media screen and (max-width: 768px) {
+  .btn-AddBasket {
+    display: block;
+  }
+}
